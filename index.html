@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FocusFlow | Productivity Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">F</div>
+            <div>
+                <h2>FocusFlow</h2>
+                <span>Stay focused.</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-item active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>✓</span>
+                Tasks
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>◷</span>
+                Focus Timer
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>✎</span>
+                Notes
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="themeToggle" class="theme-btn">
+                ◐ <span>Toggle Theme</span>
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="topbar">
+
+            <div>
+                <p class="welcome">Good morning 👋</p>
+                <h1>Ready to focus?</h1>
+            </div>
+
+            <div class="date-box">
+                <span id="currentDate"></span>
+            </div>
+
+        </header>
+
+
+        <!-- Stats -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">✓</div>
+
+                <div>
+                    <span>Tasks Completed</span>
+                    <h2 id="completedCount">0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">◷</div>
+
+                <div>
+                    <span>Focus Sessions</span>
+                    <h2 id="sessionCount">0</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">★</div>
+
+                <div>
+                    <span>Daily Progress</span>
+                    <h2 id="progressText">0%</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard Grid -->
+        <section class="dashboard-grid">
+
+            <!-- Tasks -->
+            <div class="card tasks-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="section-label">TODAY</span>
+                        <h2>My Tasks</h2>
+                    </div>
+
+                    <span id="taskCount" class="task-count">0 tasks</span>
+                </div>
+
+
+                <div class="add-task">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What needs to be done?"
+                    >
+
+                    <button id="addTaskBtn">+</button>
+
+                </div>
+
+
+                <div id="taskList" class="task-list">
+
+                    <!-- Tasks will appear here -->
+
+                    <div class="empty-state">
+                        <div>✓</div>
+                        <p>No tasks yet</p>
+                        <span>Add something you want to accomplish today.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pomodoro -->
+            <div class="card timer-card">
+
+                <div class="card-header">
+                    <div>
+                        <span class="section-label">FOCUS</span>
+                        <h2>Pomodoro</h2>
+                    </div>
+
+                    <span class="timer-status" id="timerStatus">
+                        Ready
+                    </span>
+                </div>
+
+
+                <div class="timer">
+
+                    <div class="timer-circle">
+
+                        <div>
+                            <span id="timerMinutes">25</span>
+                            <small>min</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timer-buttons">
+
+                    <button id="startTimer" class="primary-btn">
+                        Start Focus
+                    </button>
+
+                    <button id="resetTimer" class="secondary-btn">
+                        Reset
+                    </button>
+
+                </div>
+
+                <p class="timer-tip">
+                    Focus for 25 minutes. Take a short break. Repeat.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Notes -->
+        <section class="card notes-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="section-label">QUICK NOTES</span>
+                    <h2>Thoughts & Ideas</h2>
+                </div>
+
+                <span class="save-status" id="saveStatus">
+                    Saved locally
+                </span>
+
+            </div>
+
+
+            <textarea
+                id="notes"
+                placeholder="Write down your thoughts, ideas or reminders..."
+            ></textarea>
+
+        </section>
+
+
+        <footer>
+            <p>FocusFlow • Built with HTML, CSS & JavaScript</p>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
